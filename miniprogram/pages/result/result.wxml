@@ -1,0 +1,55 @@
+<!--result.wxml-->
+<view class="result-wrap">
+
+  <!-- 海报大图（独占一行，可点击放大） -->
+  <view class="poster-wrap">
+    <image
+      wx:if="{{posterSrc}}"
+      class="poster-image"
+      src="{{posterSrc}}"
+      mode="widthFix"
+    ></image>
+    <view class="poster-caption-bar">{{posterCaption}}</view>
+  </view>
+
+  <!-- 类型卡 -->
+  <view class="type-box">
+    <view class="type-kicker">{{modeKicker}}</view>
+    <view class="type-name">{{typeName}}</view>
+    <view class="match-badge">{{matchBadge}}</view>
+    <view class="type-subname">{{typeSub}}</view>
+  </view>
+
+  <!-- 人格解读 -->
+  <view class="section-box">
+    <view class="box-title">✨ 该人格的简单解读</view>
+    <view class="box-text">{{typeDesc}}</view>
+  </view>
+
+  <!-- 十五维度 -->
+  <view class="section-box">
+    <view class="box-title">📊 十五维度评分</view>
+    <view class="dim-list">
+      <view class="dim-item" wx:for="{{dimItems}}" wx:key="dim">
+        <view class="dim-item-top">
+          <text class="dim-item-name">{{item.name}}</text>
+          <text class="dim-item-score">{{item.level}} / {{item.score}}分</text>
+        </view>
+        <view class="dim-item-desc">{{item.explanation}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 友情提示 -->
+  <view class="section-box">
+    <view class="box-title">💡 友情提示</view>
+    <view class="box-text muted">{{funNote}}</view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="result-actions">
+    <view class="btn-secondary" bindtap="restartTest">重新测试</view>
+    <view class="btn-primary" bindtap="backToHome">回到首页</view>
+  </view>
+
+</view>

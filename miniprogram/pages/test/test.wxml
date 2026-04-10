@@ -1,0 +1,47 @@
+<!--test.wxml-->
+<view class="test-wrap">
+  <view class="topbar">
+    <view class="progress">
+      <view class="progress-fill" style="width: {{progressPercent}}%"></view>
+    </view>
+    <view class="progress-text">{{answeredCount}} / {{totalCount}}</view>
+  </view>
+
+  <view class="question-list">
+    <view
+      class="question {{item.answered ? 'question-answered' : ''}}"
+      wx:for="{{visibleQuestions}}"
+      wx:key="id"
+    >
+      <view class="question-meta">
+        <view class="badge">第 {{item.index}} 题</view>
+      </view>
+      <view class="question-title">{{item.text}}</view>
+      <view class="options">
+        <view
+          class="option {{opt.selected ? 'option-selected' : ''}}"
+          wx:for="{{item.options}}"
+          wx:for-item="opt"
+          wx:key="value"
+          bindtap="selectOption"
+          data-qid="{{item.id}}"
+          data-value="{{opt.value}}"
+        >
+          <view class="option-code">{{opt.code}}</view>
+          <text class="option-label">{{opt.label}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="actions-bottom">
+    <view class="hint">{{hint}}</view>
+    <view class="btn-row">
+      <view class="btn-secondary" bindtap="backToIntro">返回首页</view>
+      <view
+        class="btn-primary {{allAnswered ? '' : 'btn-disabled'}}"
+        bindtap="submitTest"
+      >提交并查看结果</view>
+    </view>
+  </view>
+</view>

@@ -1,61 +1,85 @@
-/**index.less**/
 page {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.scrollarea {
-  flex: 1;
-  overflow-y: hidden;
+  min-height: 100vh;
+  background: #fff8f0;
 }
 
-.userinfo {
+.page-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 32rpx;
+  box-sizing: border-box;
+}
+
+.hero {
+  background: #ffffff;
+  border: 4rpx solid #fde8d0;
+  border-radius: 48rpx;
+  box-shadow: 0 32rpx 96rpx rgba(230, 101, 42, 0.12);
+  padding: 80rpx 56rpx;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #aaa;
-  width: 80%;
+  text-align: center;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.eyebrow {
+  font-size: 24rpx;
+  color: #e6652a;
+  border: 3rpx solid #fde8d0;
+  background: #fff3e8;
+  border-radius: 999rpx;
+  padding: 12rpx 28rpx;
+  margin-bottom: 40rpx;
+  font-weight: 600;
 }
 
-.usermotto {
-  margin-top: 200px;
-}
-.avatar-wrapper {
-  padding: 0;
-  width: 56px !important;
-  border-radius: 8px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+.hero-title {
+  font-size: 56rpx;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #e6652a;
+  margin-bottom: 24rpx;
 }
 
-.avatar {
-  display: block;
-  width: 56px;
-  height: 56px;
+.hero-tagline {
+  font-size: 30rpx;
+  color: #9b7e6a;
+  line-height: 1.75;
+  margin-bottom: 60rpx;
 }
 
-.nickname-wrapper {
-  display: flex;
+.hero-actions {
   width: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-  border-top: .5px solid rgba(0, 0, 0, 0.1);
-  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
-  color: black;
+  display: flex;
+  justify-content: center;
 }
 
-.nickname-label {
-  width: 105px;
+.btn-primary {
+  background: linear-gradient(135deg, #ff8c42, #e6652a);
+  color: #fff;
+  padding: 28rpx 80rpx;
+  border-radius: 999rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 16rpx 48rpx rgba(230, 101, 42, 0.35);
 }
 
-.nickname-input {
-  flex: 1;
+.btn-primary:active {
+  opacity: 0.85;
+  transform: scale(0.97);
+}
+
+.intro-meta {
+  margin-top: 48rpx;
+  color: #9b7e6a;
+  font-size: 26rpx;
+  background: #fff3e8;
+  padding: 16rpx 32rpx;
+  border-radius: 999rpx;
+  border: 3rpx dashed #fde8d0;
 }
