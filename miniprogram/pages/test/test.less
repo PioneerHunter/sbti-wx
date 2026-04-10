@@ -8,17 +8,21 @@ page {
   box-sizing: border-box;
 }
 
-/* 进度条 */
+/* 进度条（固定顶部） */
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   gap: 20rpx;
-  margin-bottom: 32rpx;
   padding: 24rpx 28rpx;
-  background: #ffffff;
-  border: 3rpx solid #fde8d0;
-  border-radius: 24rpx;
-  box-shadow: 0 8rpx 32rpx rgba(230, 101, 42, 0.08);
+  background: #fff8f0;
+  border-bottom: 3rpx solid #fde8d0;
+  box-shadow: 0 4rpx 16rpx rgba(230, 101, 42, 0.08);
+  box-sizing: border-box;
 }
 
 .progress {

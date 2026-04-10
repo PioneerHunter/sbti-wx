@@ -125,10 +125,17 @@ Page({
     progressPercent: 0,
     allAnswered: false,
     hint: '全选完才会放行。世界已经够乱了，起码把题做完整。',
+    statusBarHeight: 0,
+    topbarTotalPx: 0,
   },
 
   onLoad() {
     this.answers = {}
+    const { statusBarHeight, screenWidth } = wx.getSystemInfoSync()
+    // topbar 内容高度 = 上下各 24rpx padding + 16rpx 进度条 = 64rpx
+    const topbarContentPx = Math.round(64 * screenWidth / 750)
+    this.setData({ statusBarHeight, topbarTotalPx: statusBarHeight + topbarContentPx })
+
     const shuffled = shuffle(questions)
     const insertIdx = Math.floor(Math.random() * shuffled.length) + 1
     this.shuffledQuestions = [

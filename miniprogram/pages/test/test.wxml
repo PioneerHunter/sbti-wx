@@ -1,12 +1,12 @@
 <!--test.wxml-->
-<view class="test-wrap">
-  <view class="topbar">
-    <view class="progress">
-      <view class="progress-fill" style="width: {{progressPercent}}%"></view>
-    </view>
-    <view class="progress-text">{{answeredCount}} / {{totalCount}}</view>
+<view class="topbar" style="padding-top: {{statusBarHeight}}px">
+  <view class="progress">
+    <view class="progress-fill" style="width: {{progressPercent}}%"></view>
   </view>
+  <view class="progress-text">{{answeredCount}} / {{totalCount}}</view>
+</view>
 
+<view class="test-wrap" style="padding-top: {{topbarTotalPx}}px">
   <view class="question-list">
     <view
       class="question {{item.answered ? 'question-answered' : ''}}"
